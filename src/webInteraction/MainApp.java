@@ -12,12 +12,20 @@ public class MainApp {
 		System.out.println("\f");
 		System.out.println("Welcome to Data Analizer");
 		cli.addInput("Manual Entry");
+		cli.addInput("Via Web Site");
 		
 		//find which input method the user would like to use
 		switch (cli.selectInput()){
 		case 0:
 			ManualInput manual=new ManualInput();
 			externalData=manual.getData();
+			break;
+		case 1:
+			HtmlInput web=new HtmlInput();
+			web.manuallySetUserUrl();
+			web.connect();
+			externalData=web.getData();
+			//System.out.println(externalData);
 			break;
 		case 999:
 			System.out.println("You did not select an input method!");

@@ -30,23 +30,3 @@ public class ManualInput {
 	}
 	
 }//end class
-
-
-//case 1:
-//	//case 1 needs to be turned into its own manual input class
-//	boolean exit=false;
-//	String tempInput;
-//	String rawInput="";
-//	Scanner input=new Scanner(System.in);
-//	System.out.println("Manual Input\n(or type 'exit' to finish)");
-//	while (!exit){
-//		tempInput=input.nextLine();
-//		if (tempInput.equals("exit")){
-//			exit=true;
-//		}
-//		else{
-//			rawInput=rawInput+tempInput+" ";
-//		}
-//	}
-//	System.out.println("Raw Input:\n"+rawInput);
-//	break;
