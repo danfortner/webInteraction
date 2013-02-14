@@ -3,30 +3,31 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 //Analyzer is an algorithm to extract data from text
+//it removes duplicate words, punctuation, and sorts alphabetically
 public class Analyzer{
 	
 	private String input;
 	
+	//constructor
 	public Analyzer(String aString){
 		input=aString;
 	}
 	
-	//returns analysis of the input data
-	//this algorithm is a work in progress, but currently it:
-	//sorts and prints all words without duplicates
+	//returns analysis of the input data, sorts and prints all words without 
+	//duplicates or punctuation.  Uses a TreeSet for the efficiency of a tree.
 	public String tagWords(){
 		TreeSet<String> wordPile=new TreeSet<String>();
-		String[] tempStringArray;
-		
+		String[] stringArray;
 		input=input.toLowerCase().trim();
-		tempStringArray=input.split(" ");
-		for (int i=0;i<tempStringArray.length;i++){
-			if(!wordPile.contains(tempStringArray[i])){
-				wordPile.add(tempStringArray[i]);
+		stringArray=input.split(" ");
+		for (int i=0;i<stringArray.length;i++){ //remove the duplicates
+			if(!wordPile.contains(stringArray[i])){
+				wordPile.add(stringArray[i]);
 			}
 		}
 		wordPile=removeAllPunctuation(wordPile);
-		return "Unique, non-repeated tag words:"+" "+wordPile;
+		System.out.println("Unique, non-repeated tag words:");
+		return wordPile.toString();
 	}
 
 	//takes an TreeSet and removes all unwanted punctuation
@@ -41,9 +42,9 @@ public class Analyzer{
 		{
 			originalWord=wordIterator.next();
 			cleanWord=removePunctuation(originalWord);
-			if (!cleanWord.equals(originalWord)){
+			if (!cleanWord.equals(originalWord)){ //update words that had punctuation removed
 				cleanWords.remove(originalWord);
-				if (cleanWord.length()>0)
+				if (cleanWord.length()>0) //removes words that were made of punctuation only
 					cleanWords.add(cleanWord);
 			}
 		}
@@ -64,6 +65,11 @@ public class Analyzer{
 			}
 		}
 		return sb.toString();
+	}
+	
+	//to String method
+	public String toString(){
+		return input;
 	}
 	
 }//end class

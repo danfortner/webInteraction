@@ -1,0 +1,35 @@
+
+
+////read file data.txt and creates a graph from those conversions
+////uses a linked list to keep track of units available
+//String fileName = "data.txt"; 
+//System.out.print("\f");
+//String firstItem;
+//String lastItem;
+//double unit;
+//
+//try
+//{
+//    Scanner data = new Scanner(new File(fileName));
+//    while (data.hasNext())
+//    {
+//        firstItem = data.next().toLowerCase();
+//        lastItem = data.next().toLowerCase();
+//        unit = data.nextDouble();
+//        if(!unitList.contains(firstItem)){
+//            graph.addVertex(firstItem);
+//            unitList.add(firstItem);
+//        }
+//        if(!unitList.contains(lastItem)){
+//            graph.addVertex(lastItem);
+//            unitList.add(lastItem);
+//        }
+//        graph.addEdge(firstItem,lastItem,unit);
+//        System.out.println("Adding conversion: "+firstItem+" "+lastItem+" "+unit);
+//    } 
+//    data.close(); 
+//}
+//catch (IOException e)
+//{
+//    System.out.println("I/O error " + e.getMessage());
+//}

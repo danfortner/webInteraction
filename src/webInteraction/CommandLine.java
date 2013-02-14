@@ -9,6 +9,7 @@ public class CommandLine {
 	private Scanner input=new Scanner(System.in);
 	private List<String> inputSources;
 	
+	//constructor
 	public CommandLine(){
 		inputSources= new java.util.LinkedList<String>();
 	}
@@ -16,7 +17,8 @@ public class CommandLine {
 	//CLI for input choice, returns the selected data input choice or 999 to cancel
 	public int selectInput(){
 		int selection=-1;
-		while (selection<0||selection>inputSources.size()-1){
+		//while loop keeps them from selecting a bad input
+		while (selection<0||selection>inputSources.size()-1){ 
 			System.out.println("Please select which type of data input you would like to use:");
 			for (int x=0; x<inputSources.size();x++){
 				System.out.println(x+" = "+inputSources.get(x));

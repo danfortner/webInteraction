@@ -5,28 +5,29 @@ import java.util.Scanner;
 //and returns the concatenation of that data
 public class ManualInput {
 
+	//constructor
 	public ManualInput(){
 	}
 	
 	//use a scanner to accumulate whatever the user types in the terminal
 	//returns the accumulated result
+	//User can exit by typing 'exit'
 	public String getData(){
 		boolean exit=false;
-		String tempInput;
-		String rawInput="";
+		String currentInput;
+		String result="";
 		Scanner input=new Scanner(System.in);
-		
 		System.out.println("Manual Input\n(or type 'exit' to finish)");
 		while (!exit){
-			tempInput=input.nextLine();
-			if (tempInput.equals("exit")){
+			currentInput=input.nextLine();
+			if (currentInput.equals("exit")){
 				exit=true;
 			}
 			else{
-				rawInput=rawInput+tempInput+" ";
+				result=result+currentInput+" ";
 			}
 		}
-		return rawInput;
+		return result;
 	}
 	
 }//end class

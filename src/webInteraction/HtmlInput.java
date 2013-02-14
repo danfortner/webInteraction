@@ -1,5 +1,4 @@
 package webInteraction;
-
 import java.net.*;
 import java.util.Scanner;
 import java.io.*;
@@ -65,7 +64,7 @@ public class HtmlInput {
 		return data;
 	}
 	
-	//basic getter and setter methods below
+	//set URL method
 	public void setUserUrl(String anEntry){
 		userUrl=anEntry;
 	}
