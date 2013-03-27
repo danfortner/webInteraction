@@ -18,10 +18,11 @@ public class HtmlInput {
 	}
 	
 	//manually set URL through the command line
-	public void manuallySetUserUrl(){
+	public String manuallySetUserUrl(){
 		System.out.println("Connect to which web site?");
 		Scanner input=new Scanner(System.in);
 		userUrl=input.next();
+		return userUrl;
 	}
 	
 	//start the connection and return true if connected
