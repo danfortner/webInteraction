@@ -55,4 +55,17 @@ public class CommandLine {
 		return true;
 	}
 	
+	//basic terminal based input method
+	public String getInput(){
+		System.out.println("Please enter input:");
+		Scanner input=new Scanner(System.in);
+		String userInput=input.next();
+		return userInput;
+	}
+	
+	//print statement for use by other classes
+	public void output(String input){
+		System.out.println(input);
+	}
+	
 }//end class
