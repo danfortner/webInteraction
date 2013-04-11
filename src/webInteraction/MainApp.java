@@ -39,17 +39,6 @@ public class MainApp {
 			rawData=web.getData();
 			break;
 			
-		case 2://Image Finder
-			ImageFinder finder = new ImageFinder();
-			finder.printInformation();
-			cli.output("What is the location of the image to be found?");
-			String input=cli.getInput();
-			finder.setTargetImage(new URL (input));
-			cli.output("What is the web site to be searched?");
-			input=cli.getInput();
-			finder.openWebSite(new URL(input));
-			finder.findImage();
-			finder.showFoundImage(5);
 			
 		case 999:
 			System.out.println("You did not select an input method!");
@@ -62,3 +51,18 @@ public class MainApp {
 		
 	}//end main
 }//end class
+
+
+
+
+//case 2://Image Finder
+//	ImageFinder finder = new ImageFinder();
+//	finder.printInformation();
+//	cli.output("What is the location of the image to be found?");
+//	String input=cli.getInput();
+//	finder.setTargetImage(new URL (input));
+//	cli.output("What is the web site to be searched?");
+//	input=cli.getInput();
+//	finder.openWebSite(new URL(input));
+//	finder.findImage();
+//	finder.showFoundImage(5);
