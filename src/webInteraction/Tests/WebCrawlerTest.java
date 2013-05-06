@@ -7,6 +7,11 @@ public class WebCrawlerTest extends TestCase{
 	//before do
 	WebCrawler test=new WebCrawler("http://www.postimage.org");
 	
+	/*
+	 * Only one test may be enabled at a time due to too many web site
+	 * connections being made simultaneously.
+	 */
+	
 	//test web site connection
 //	public void testConnection(){
 //		test.crawl();

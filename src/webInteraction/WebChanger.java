@@ -14,6 +14,5 @@ public class WebChanger {
 		SaveString save=new SaveString(hardCodePath, content);
 		System.out.println(save.save());
 		
-		
 	}//end main
 }//end class

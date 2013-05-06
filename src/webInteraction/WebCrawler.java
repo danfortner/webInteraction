@@ -62,7 +62,7 @@ public class WebCrawler {
 	private TreeSet <String> parseAllLinks(String content){
 		org.jsoup.nodes.Document document = Jsoup.parse(content);
 		for (org.jsoup.nodes.Element element: document.getElementsByTag("a")){
-			if (cleanUrl(element.attr("href"))
+			if (isCleanUrl(element.attr("href"))
 					&&(!urlList.contains(element.attr("href")))){
 				urlList.add(element.attr("href"));
 				System.out.println(element.attr("href"));
@@ -71,19 +71,13 @@ public class WebCrawler {
 		return urlList;
 	}
 	
-	private Boolean cleanUrl(String urlEntry){
-		String[] stringRegex = new String[4];
-		stringRegex[0]=userUrl.substring(0, 14);
-		stringRegex[1]=userUrl.replace("http://", "https://");
-		stringRegex[2]=userUrl.replace("http://www.", "http://");
-		stringRegex[3]=userUrl.replace("http://www.", "https://");		
-		if(urlEntry.startsWith(stringRegex[0])
-				||urlEntry.startsWith(stringRegex[1])
-				||urlEntry.startsWith(stringRegex[2])
-				||urlEntry.startsWith(stringRegex[3])){
-			return true;
-		}//else
+	private Boolean isCleanUrl(String urlEntry){
+		if (urlEntry.startsWith("http://")) return true;
+		if (urlEntry.startsWith("http://www.")) return true;
+		if (urlEntry.startsWith("https://")) return true;
+		if (urlEntry.startsWith("https://www.")) return true;
 		return false;
-	}
+	}	
+	
 	
 }//end class
